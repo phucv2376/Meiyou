@@ -1,7 +1,7 @@
 services:
   meiyou_backend:
     build: ./ytm-api
-    container_name: ytm_api
+    container_name: ytm-api
     ports:
       - "8000:8000"
     volumes:
@@ -10,12 +10,12 @@ services:
       - ./Music_Library:/Music_Library
 
   meiyou_frontend:
-    build: ./music-browse
-    container_name: meiyou_browser
+    build: ./meiyou-browse
+    container_name: meiyou-browse
     ports:
       - "3000:3000"
     volumes:
-      - ./music-browse:/app
+      - ./meiyou-browse:/app
       - ./Music_Library:/Music_Library
       - /app/node_modules
       - /app/.next

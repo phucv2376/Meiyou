@@ -1,0 +1,6 @@
+[submodule "meiyou-browse"]
+	path = meiyou-browse
+	url = https://github.com/phucv2376/meiyou-browse
+[submodule "ytm-api"]
+	path = ytm-api
+	url = https://github.com/phucv2376/ytm-api
