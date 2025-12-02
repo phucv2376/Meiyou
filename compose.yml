@@ -1,0 +1,25 @@
+services:
+  meiyou_backend:
+    build: ./ytm-api
+    container_name: ytm_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ytm-api:/app
+      - ./ytm-api/downloads:/app/downloads
+      - ./Music_Library:/Music_Library
+
+  meiyou_frontend:
+    build: ./music-browse
+    container_name: meiyou_browser
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./music-browse:/app
+      - ./Music_Library:/Music_Library
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:8000
+    depends_on:
+      - meiyou_backend
